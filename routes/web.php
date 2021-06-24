@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('dashboard.index');
 });
+
+Route::get('/data_karyawan', function () {
+    return view('data_karyawan.index');
+});
