@@ -21,16 +21,16 @@
                     <li><a href="index4.html">Dashboard 4</a></li>
                 </ul>
             </li>
-            <li class="treeview"> <a href="#"> <i class="fa fa-bullseye"></i> <span>Apps</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <li class="treeview"> <a href="#"> <i class="fa fa-bullseye"></i> <span>Data Karyawan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="apps-calendar.html">Calendar</a></li>
+                    <li><a href="{{url('data_karyawan')}}">Tampil Data</a></li>
                     <li><a href="apps-support-ticket.html">Support Ticket</a></li>
                     <li><a href="apps-contacts.html">Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html">Contact Grid</a></li>
                     <li><a href="apps-contact-details.html">Contact Detail</a></li>
                 </ul>
             </li>
-            <li class="treeview"> <a href="#"> <i class="fa fa-envelope-o "></i> <span>Inbox</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <li class="treeview"> <a href="#"> <i class="fa fa-envelope-o "></i> <span>Input Penilaian</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="apps-mailbox.html">Mailbox</a></li>
                     <li><a href="apps-mailbox-detail.html">Mailbox Detail</a></li>
