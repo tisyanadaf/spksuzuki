@@ -17,8 +17,12 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset ('dist/css/style.css')}}">
     <link rel="stylesheet" href="{{asset ('dist/css/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset ('dist/css/et-line-font/et-line-font.css')}}">
-    <link rel="stylesheet" href="{{asset ('dist/css/themify-icons/themify-icons.css')}}">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{asset('dist/plugins/datatables/css/dataTables.bootstrap.min.css')}}">
+
+    <!-- form wizard -->
+    <link rel="stylesheet" href="{{asset('dist/plugins/formwizard/jquery-steps.css')}}">
 
     <!-- Chartist CSS -->
     <link rel="stylesheet" href="{{asset ('dist/plugins/chartist-js/chartist.min.css')}}">
@@ -55,16 +59,22 @@
 
     <!-- template -->
     <script src="{{asset ('dist/js/niche.js')}}"></script>
-    @yield('scriptJS')
+
+    <!-- DataTable -->
+    <script src="{{asset('dist/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('dist/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
 
     <!-- Chartjs JavaScript -->
     <script src="{{asset ('dist/plugins/chartjs/chart.min.js')}}"></script>
-    <script src="{{asset ('dist/plugins/chartjs/chart-int.js')}}"></script>
+    <!-- <script src="{{asset ('dist/plugins/chartjs/chart-int.js')}}"></script> -->
+    @yield('scriptJS')
+
+
 
     <!-- Chartist JavaScript -->
-    <script src="{{asset ('dist/plugins/chartist-js/chartist.min.js')}}"></script>
-    <script src="{{asset ('dist/plugins/chartist-js/chartist-plugin-tooltip.js')}}"></script>
-    <script src="{{asset ('dist/plugins/functions/chartist-init.js')}}"></script>
+    <!-- <script src="{{asset ('dist/plugins/chartist-js/chartist.min.js')}}"></script>
+    <script src="{{asset ('dist/plugins/chartist-js/chartist-plugin-tooltip.js')}}"></script> -->
+    <!-- <script src="{{asset ('dist/plugins/functions/chartist-init.js')}}"></script> -->
 </body>
 
 </html>

@@ -12,9 +12,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+// Login
+Route::get('/login', function () {
+    return view('login.index');
+});
+
+//Dashboard
+Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
-Route::get('/data_karyawan', function () {
+// Data Karyawan
+Route::get('/dashboard/data_karyawan', function () {
     return view('data_karyawan.index');
+});
+Route::get('/dashboard/input_data_karyawan', function () {
+    return view('data_karyawan.form');
+});
+
+// Penilaian
+Route::get('/dashboard/input_nilai', function () {
+    return view('penilaian.form');
+});
+Route::get('/dashboard/hasil_nilai', function () {
+    return view('penilaian.index');
 });
