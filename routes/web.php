@@ -34,6 +34,9 @@ Route::get('/dashboard/input_data_karyawan', function () {
 });
 
 // Penilaian
+Route::get('/dashboard/penilaian', function () {
+    return view('penilaian.index');
+});
 Route::get('/dashboard/input_nilai', function () {
     return view('penilaian.form');
 });

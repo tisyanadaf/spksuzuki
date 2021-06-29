@@ -22,6 +22,7 @@
                                             <th>Platform(s)</th>
                                             <th>Engine version</th>
                                             <th>CSS grade</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,8 +32,9 @@
                                                 Explorer 4.0
                                             </td>
                                             <td>Win 95+</td>
-                                            <td> 4</td>
+                                            <td>Nilai</a></td>
                                             <td>X</td>
+                                            <td><a href="{{ url('dashboard/input_nilai') }}" type="button" class="btn btn-sm btn-info">Nilai</a></td>
                                         </tr>
                                         <tr>
                                             <td>Trident</td>
@@ -76,15 +78,15 @@
                                             <td>A</td>
                                         </tr>
                                         <tr>
-                                            <td>Gecko</td>
+                                            <td></td>
                                             <td>Firefox 1.0</td>
                                             <td>Win 98+ / OSX.2+</td>
                                             <td>1.7</td>
                                             <td>A</td>
                                         </tr>
                                         <tr>
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.5</td>
+                                            <td></td>
+                                            <td></td>
                                             <td>Win 98+ / OSX.2+</td>
                                             <td>1.8</td>
                                             <td>A</td>
@@ -440,6 +442,7 @@
                                             <th>Platform(s)</th>
                                             <th>Engine version</th>
                                             <th>CSS grade</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                 </table>

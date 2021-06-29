@@ -34,7 +34,7 @@
     <h3 class="login-box-msg">Log In</h3>
     <form action="index.html" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control sty1" placeholder="User">
+        <input type="text" class="form-control sty1" placeholder="User">
       </div>
       <div class="form-group has-feedback">
         <input type="password" class="form-control sty1" placeholder="Password">
