@@ -41,5 +41,5 @@ Route::get('/dashboard/input_nilai', function () {
     return view('penilaian.form');
 });
 Route::get('/dashboard/hasil_nilai', function () {
-    return view('penilaian.index');
+    return view('penilaian.detail');
 });
