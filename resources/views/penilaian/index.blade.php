@@ -17,12 +17,12 @@
                                 <table id="tbl_hasil" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                            <th>Action</th>
+                                            <th>NIK</th>
+                                            <th>Nama</th>
+                                            <th>Jabatan</th>
+                                            <th>Divisi</th>
+                                            <th>Tanggal Masuk</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -34,17 +34,27 @@
                                             <td>Win 95+</td>
                                             <td>Nilai</a></td>
                                             <td>X</td>
-                                            <td><a href="{{ url('dashboard/input_nilai') }}" type="button" class="btn btn-sm btn-info">Nilai</a></td>
+                                            <td><a href="{{ url('dashboard/input_nilai') }}" type="button" class="btn btn-sm btn-warning">Nilai</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trident</td>
+                                            <td>Internet
+                                                Explorer 4.0
+                                            </td>
+                                            <td>Win 95+</td>
+                                            <td>Nilai</a></td>
+                                            <td>X</td>
+                                            <td><span class="label label-success">Sudah dinilai</span></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                            <th>Action</th>
+                                            <th>NIK</th>
+                                            <th>Nama</th>
+                                            <th>Jabatan</th>
+                                            <th>Divisi</th>
+                                            <th>Tanggal Masuk</th>
+                                            <th>Status</th>
                                         </tr>
                                     </tfoot>
                                 </table>

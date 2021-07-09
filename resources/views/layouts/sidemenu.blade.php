@@ -10,7 +10,7 @@
             </li>
             <li class="treeview"> <a href="#"> <i class="fa fa-tasks"></i> <span>Penilaian</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('dashboard/input_nilai') }}">Input Penilaian</a></li>
+                    <li><a href="{{ url('dashboard/penilaian') }}">Input Penilaian</a></li>
                     <li><a href="{{ url('dashboard/hasil_nilai') }}">Hasil Penilaian</a></li>
                 </ul>
             </li>
