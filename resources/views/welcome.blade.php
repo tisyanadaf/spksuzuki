@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Sistem Penilaian Kinerja Suzuki</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel='icon' href="{{asset('dist/img/favicon_suzuki.ico')}}" type='image/x-icon'>
 
         <!-- Styles -->
         <style>

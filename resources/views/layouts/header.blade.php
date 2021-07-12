@@ -15,7 +15,7 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle"></i> <span class="hidden-xs">Alexander Pierce</span> </a>
+                        <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle"></i> <span class="hidden-xs">Kepala Cabang</span> </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header" style="height: 80px !important;">
                                     <p class="text-left">Florence Douglas <small>florence@gmail.com</small> </p>

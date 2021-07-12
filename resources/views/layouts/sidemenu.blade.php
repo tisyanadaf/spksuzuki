@@ -8,11 +8,9 @@
             </li>
             <li class=""> <a href="{{ url('dashboard/data_karyawan') }}"> <i class="fa fa-list-alt"></i> <span>Data Karyawan</span> <span class="pull-right-container"> </span> </a>
             </li>
-            <li class="treeview"> <a href="#"> <i class="fa fa-tasks"></i> <span>Penilaian</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('dashboard/penilaian') }}">Input Penilaian</a></li>
-                    <li><a href="{{ url('dashboard/hasil_nilai') }}">Hasil Penilaian</a></li>
-                </ul>
+            <li class=""> <a href="{{ url('dashboard/penilaian') }}"> <i class="fa fa-pencil-square-o"></i> <span>Input Penilaian</span> <span class="pull-right-container"> </span></a>
+            </li>
+            <li class=""> <a href="{{ url('dashboard/hasil_nilai') }}"> <i class="fa fa-file-text"></i> <span>Hasil Penilaian</span> <span class="pull-right-container"> </span></a>
             </li>
         </ul>
     </div>
