@@ -2,9 +2,9 @@
             <!-- Logo -->
             <a href="index.html" class="logo blue-bg">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><img src="{{asset('dist/img/logo-n.png')}}" alt=""></span>
+                <span class="logo-mini"><img style="height: auto; width: 90%;" src="{{asset('dist/img/suzuki-small.png')}}" alt=""></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><img src="{{asset('dist/img/logo.png')}}" alt=""></span>
+                <span class="logo-lg"><img style="height: auto; width: 90%;" src="{{asset('dist/img/suzuki.svg')}}" alt=""></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar blue-bg navbar-static-top">
