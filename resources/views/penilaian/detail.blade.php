@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+<title>Hasil Penilaian</title>
+@stop
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

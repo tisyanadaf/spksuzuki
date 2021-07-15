@@ -1,4 +1,7 @@
 @extends('index')
+@section('title')
+<title>Sistem Penilaian Kinerja Suzuki</title>
+@stop
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
