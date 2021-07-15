@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                    <a href="{{ url('dashboard/input_data_karyawan') }}" type="button" class="btn btn-warning float-right m-2"><i class="fa fa-download"></i> Unduh</a>
+                        <a href="{{ url('dashboard/input_data_karyawan') }}" type="button" class="btn btn-warning float-right m-2"><i class="fa fa-download"></i> Unduh</a>
                         <div class="info-box m-t-1">
                             <div class="table-responsive">
                                 <table id="tbl_hasil" class="table table-bordered table-striped">
@@ -64,5 +64,9 @@
     </div>
     @stop
     @section('scriptJS')
+    <script>
+        var menu_active = document.getElementById('hasil-penilaian');
+        menu_active.classList.add('active');
+    </script>
     @include('penilaian.penilaian_js')
     @stop

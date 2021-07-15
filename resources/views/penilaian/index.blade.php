@@ -70,5 +70,9 @@
     </div>
     @stop
     @section('scriptJS')
+    <script>
+        var menu_active = document.getElementById('input-penilaian');
+        menu_active.classList.add('active');
+    </script>
     @include('penilaian.penilaian_js')
     @stop
