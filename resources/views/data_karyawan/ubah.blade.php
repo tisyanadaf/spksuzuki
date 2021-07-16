@@ -1,6 +1,6 @@
 @extends('index')
 @section('title')
-<title>Tambah Data Karyawan</title>
+<title>Ubah Data Karyawan</title>
 @stop
 @section('content')
 <div class="content-wrapper">
@@ -8,9 +8,9 @@
     <div class="content-header sty-one">
         <ol class="breadcrumb">
             <li><a href="{{ url('dashboard/data_karyawan') }}">Data Karyawan</a></li>
-            <li class="sub-bread"><i class="fa fa-angle-right"></i> Tambah Data Karyawan</li>
+            <li class="sub-bread"><i class="fa fa-angle-right"></i> Ubah Data Karyawan</li>
         </ol>
-        <h1>Form Data Karyawan</h1>
+        <h1>Ubah Data Karyawan</h1>
     </div>
     <!-- Main content -->
     <div class="content">

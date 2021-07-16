@@ -27,32 +27,47 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+<header class="main-header">
+            <!-- Logo -->
+            <a href="index.html" class="logo blue-bg">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><img style="height: auto; width: 90%;" src="{{asset('dist/img/suzuki-small.png')}}" alt=""></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><img style="height: auto; width: 90%;" src="{{asset('dist/img/suzuki.svg')}}" alt=""></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar blue-bg navbar-static-top">
+                <!-- Sidebar toggle button-->
+                
+            </nav>
+        </header>
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-box-body">
-    <h3 class="login-box-msg">Log In</h3>
-    <form action="index.html" method="post">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control sty1" placeholder="User">
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control sty1" placeholder="Password">
-      </div>
-      <div>
-        <!-- /.col -->
-        <div class="col-xs-4 m-t-1">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-        </div>
-        <!-- /.col --> 
-      </div>
-    </form>
+<body>
+  <div class="content-header sty-one">
+    <ol class="breadcrumb">
+      <li><a href="{{ url('/') }}">Sistem Penilaian Kinerja</a></li>
+      <li class="sub-bread"><i class="fa fa-angle-right"></i> Log in</li>
+    </ol>
   </div>
-  <!-- /.login-box-body --> 
-</div>
-<!-- /.login-box --> 
-
+  <br><br><br>
+  <center>
+  <div class="col-lg-4 m-b-3" height="100vh"> 
+    <div class="card" align="center">
+      <div class="card-body">
+        <h3 class="login-box-msg">Log In</h3>
+        <form action="index.html" method="post">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control sty1" placeholder="User">
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control sty1" placeholder="Password">
+        </div>
+        <a href="#" class="btn btn-primary">Sign In</a> </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  </center>
 <!-- jQuery 3 --> 
 <script src="{{asset('dist/js/jquery.min.js')}}"></script> 
 
@@ -61,6 +76,10 @@
 
 <!-- template --> 
 <script src="{{asset('dist/js/niche.js')}}"></script>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">Version 1.2</div>
+    Copyright © 2021 PT. Dwi Perkasa Mobiltama Cibubur
+</footer>
 @include('login.login_js')
 </body>
 </html>

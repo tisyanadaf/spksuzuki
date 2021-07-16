@@ -32,6 +32,9 @@ Route::get('/dashboard/data_karyawan', function () {
 Route::get('/dashboard/input_data_karyawan', function () {
     return view('data_karyawan.form');
 });
+Route::get('/dashboard/ubah_data_karyawan', function () {
+    return view('data_karyawan.ubah');
+});
 
 // Penilaian
 Route::get('/dashboard/penilaian', function () {

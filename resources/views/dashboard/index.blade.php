@@ -1,11 +1,14 @@
 @extends('index')
 @section('title')
-<title>Sistem Penilaian Kinerja Suzuki</title>
+<title>Dashboard</title>
 @stop
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
+        <ol class="breadcrumb">
+        <li class="sub-bread"> Dashboard</li>
+      </ol>
         <h1>Dashboard</h1>
     </div>
 

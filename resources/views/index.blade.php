@@ -51,7 +51,7 @@
     </div>
     <footer class="main-footer">
         <div class="pull-right hidden-xs">Version 1.2</div>
-        Copyright © 2017 Yourdomian. All rights reserved.
+        Copyright © 2021 PT. Dwi Perkasa Mobiltama Cibubur
     </footer>
     <!-- jQuery 3 -->
     <script src="{{asset ('dist/js/jquery.min.js')}}"></script>

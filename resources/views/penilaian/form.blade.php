@@ -1,8 +1,15 @@
 @extends('index')
+@section('title')
+<title>Form Penilaian</title>
+@stop
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
+        <ol class="breadcrumb">
+            <li><a href="{{ url('dashboard/penilaian') }}">Input Penilaian</a></li>
+            <li class="sub-bread"><i class="fa fa-angle-right"></i> Form Penilaian</li>
+        </ol>
         <h1>Form Data Penilaian</h1>
     </div>
     <!-- Main content -->

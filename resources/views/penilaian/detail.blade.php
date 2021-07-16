@@ -6,6 +6,9 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
+        <ol class="breadcrumb">
+            <li class="sub-bread">Data Penilaian</li>
+        </ol>
         <h1>Data Penilaian</h1>
     </div>
     <!-- Main content -->

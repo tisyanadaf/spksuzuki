@@ -6,7 +6,10 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-        <h1>Data Penilaian</h1>
+        <ol class="breadcrumb">
+            <li class="sub-bread">Input Penilaian</li>
+        </ol>
+        <h1>Input Penilaian</h1>
     </div>
     <!-- Main content -->
     <div class="content">
@@ -47,7 +50,8 @@
                                             <td>Win 95+</td>
                                             <td>Nilai</a></td>
                                             <td>X</td>
-                                            <td><span class="label label-success">Sudah dinilai</span></td>
+                                            <td width="100"><span class="label label-success">Sudah dinilai</span> <a href="{{ url('dashboard/input_nilai') }}"> Lihat </a></td>
+                                            
                                         </tr>
                                     </tbody>
                                     <tfoot>
