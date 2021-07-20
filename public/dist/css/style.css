@@ -259,7 +259,6 @@ color:#ccc
 	border-left: 0;
 	border-right: 0;
 	border-top: 0;
- content:;
 	margin: 0;
 	display: inherit;
 }
@@ -5715,7 +5714,5 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e73f7c', endCo
 .main-header .navbar .navbar-nav > li.p-ph-res > a {
 	padding: 22px 18px 21px 18px;
 }
-
-
 
 }
