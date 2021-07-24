@@ -58,6 +58,11 @@
           <h3 class="login-box-msg">Log In</h3>
           <form action="{{ url('login') }}" method="post">
             {{csrf_field()}}
+            @if (Session::has('error_login'))
+            <div class="alert alert-danger">
+              {{ Session::get('error_login') }}
+            </div>
+            @endif
             <div class="form-group has-feedback">
               <input type="text" autocomplete="off" class="form-control sty1" name="username" placeholder="User">
             </div>

@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        // $this->middleware('guest')->except('logout');
         $this->karyawan_model = new Karyawan;
     }
 
@@ -51,9 +51,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // dd($request);
-        $karyawan =  $this->karyawan_model->get_data($request->username);
-
         $credentials = array(
             'username' => $request->username,
             'password' => $request->password,
