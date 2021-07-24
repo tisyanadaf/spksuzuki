@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Karyawan;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,15 +28,49 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
+    private $karyawan_model;
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->karyawan_model = new Karyawan;
+    }
+
+    public function index()
+    {
+        return view('login.index');
+    }
+
+    public function login(Request $request)
+    {
+        // dd($request);
+        $karyawan =  $this->karyawan_model->get_data($request->username);
+
+        $credentials = array(
+            'username' => $request->username,
+            'password' => $request->password,
+        );
+
+        if (Auth::guard('web')->attempt($credentials)) {
+            return redirect('dashboard');
+        } else {
+            print_r('Ga');
+            $request->session()->flash('error_login', 'Login Gagal, Cek Kembali Username dan Password');
+            return redirect('login');
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }
