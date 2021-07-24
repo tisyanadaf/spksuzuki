@@ -22,7 +22,7 @@ class CreateTableKaryawan extends Migration
             $table->string('jabatan');
             $table->string('username');
             $table->string('password');
-            $table->enum('role', ['kepala_cabang', 'kepala_divisi']);
+            $table->enum('role', ['admin', 'karyawan']);
             $table->timestamps();
         });
     }
