@@ -23,18 +23,15 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::middleware(['isLogged'])->group(function () {
     //Dashboard
-    Route::get('/dashboard', 'Dashboard@index');
+    Route::get('/dashboard', 'DashboardController@index');
 
     // Data Karyawan
-    Route::get('/dashboard/data_karyawan', function () {
-        return view('data_karyawan.index');
-    });
-    Route::get('/dashboard/input_data_karyawan', function () {
-        return view('data_karyawan.form');
-    });
-    Route::get('/dashboard/ubah_data_karyawan', function () {
-        return view('data_karyawan.ubah');
-    });
+    Route::get('/dashboard/data_karyawan', 'DataKaryawanController@index');
+    Route::get('/dashboard/input_karyawan', 'DataKaryawanController@store');
+    Route::post('/dashboard/input_karyawan', 'DataKaryawanController@store');
+    Route::get('/dashboard/ubah_karyawan/{id}', 'DataKaryawanController@store');
+    Route::post('/dashboard/ubah_karyawan/{id}', 'DataKaryawanController@store');
+    Route::delete('/dashboard/delete_karyawan/{id}', 'DataKaryawanController@delete');
 
     // Penilaian
     Route::get('/dashboard/penilaian', function () {

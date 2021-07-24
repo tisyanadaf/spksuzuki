@@ -20,8 +20,8 @@ class CreateTableKaryawan extends Migration
             $table->date('tgl_masuk');
             $table->enum('divisi', ['penjualan', 'service']);
             $table->string('jabatan');
-            $table->string('username');
-            $table->string('password');
+            $table->string('username')->nullable(true);
+            $table->string('password')->nullable(true);
             $table->enum('role', ['admin', 'karyawan']);
             $table->timestamps();
         });

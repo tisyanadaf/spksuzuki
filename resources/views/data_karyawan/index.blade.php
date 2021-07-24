@@ -18,7 +18,17 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ url('dashboard/input_data_karyawan') }}" type="button" class="btn btn-primary float-right m-2">Tambah Karyawan</a>
+                        @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                        @endif
+                        @if (Session::has('failed'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('failed') }}
+                        </div>
+                        @endif
+                        <a href="{{ url('dashboard/input_karyawan') }}" type="button" class="btn btn-primary float-right m-2">Tambah Karyawan</a>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#all" role="tab"><span class="hidden-sm-up"><i class="fa fa-asterisk"></i></span> <span class="hidden-xs-down">Keseluruhan</span></a> </li>
@@ -42,19 +52,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @if (count($all_karyawan) !== 0)
+                                                @foreach ($all_karyawan as $row)
                                                 <tr>
-                                                    <td>123456</td>
-                                                    <td>Internet
-                                                        Explorer 4.0
-                                                    </td>
-                                                    <td>Win 95+</td>
-                                                    <td> 4</td>
-                                                    <td>X</td>
+                                                    <td>{{ $row->nik }}</td>
+                                                    <td>{{ strtoupper($row->nama_lengkap) }}</td>
+                                                    <td>{{ strtoupper($row->jabatan) }}</td>
+                                                    <td>{{ strtoupper($row->divisi) }}</td>
+                                                    <td>{{ $row->tgl_masuk }}</td>
                                                     <td>
-                                                        <a href="{{ url('dashboard/ubah_data_karyawan') }}" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
-                                                        <a href="{{ url('dashboard/hapus_data_karyawan') }}" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>    
-                                                </td>
+                                                        <a href='{{ url("dashboard/ubah_karyawan/$row->id") }}' type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
+                                                        <a href='{{ url("dashboard/hapus_karyawan/$row->id") }}'' type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                    </td>
                                                 </tr>
+                                                @endforeach
+                                                @else
+                                                <tr><td colspan="6" align="center">No Data</td></tr>
+                                                @endif
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -75,7 +89,7 @@
                                     <div class="table-responsive">
                                         <table id="tbl_penjualan" class="table table-bordered table-striped">
                                             <thead>
-                                            <tr>
+                                                <tr>
                                                     <th>NIK</th>
                                                     <th>NAMA</th>
                                                     <th>JABATAN</th>
@@ -85,19 +99,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @if (count($penjualan) !== 0)
+                                                @foreach ($penjualan as $row)
                                                 <tr>
-                                                    <td>123456</td>
-                                                    <td>Internet
-                                                        Explorer 4.0
-                                                    </td>
-                                                    <td>Win 95+</td>
-                                                    <td> 4</td>
-                                                    <td>X</td>
+                                                    <td>{{ $row->nik }}</td>
+                                                    <td>{{ strtoupper($row->nama_lengkap) }}</td>
+                                                    <td>{{ strtoupper($row->jabatan) }}</td>
+                                                    <td>{{ strtoupper($row->divisi) }}</td>
+                                                    <td>{{ $row->tgl_masuk }}</td>
                                                     <td>
-                                                        <a href="{{ url('dashboard/ubah_data_karyawan') }}" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
-                                                        <a href="{{ url('dashboard/hapus_data_karyawan') }}" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>    
-                                                </td>
+                                                        <a href=' {{ url("dashboard/ubah_karyawan/$row->id") }}' type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
+                                                        <a href='{{ url("dashboard/hapus_karyawan/$row->id") }}'' type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                    </td>
                                                 </tr>
+                                                @endforeach
+                                                @else
+                                                <tr><td colspan="6" align="center">No Data</td></tr>
+                                                @endif
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -118,7 +136,7 @@
                                     <div class="table-responsive">
                                         <table id="tbl_service" class="table table-bordered table-striped">
                                             <thead>
-                                            <tr>
+                                                <tr>
                                                     <th>NIK</th>
                                                     <th>NAMA</th>
                                                     <th>JABATAN</th>
@@ -128,19 +146,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @if (count($service) !== 0)
+                                                @foreach ($service as $row)
                                                 <tr>
-                                                    <td>123456</td>
-                                                    <td>Internet
-                                                        Explorer 4.0
-                                                    </td>
-                                                    <td>Win 95+</td>
-                                                    <td> 4</td>
-                                                    <td>X</td>
+                                                    <td>{{ $row->nik }}</td>
+                                                    <td>{{ strtoupper($row->nama_lengkap) }}</td>
+                                                    <td>{{ strtoupper($row->jabatan) }}</td>
+                                                    <td>{{ strtoupper($row->divisi) }}</td>
+                                                    <td>{{ $row->tgl_masuk }}</td>
                                                     <td>
-                                                        <a href="{{ url('dashboard/ubah_data_karyawan') }}" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
-                                                        <a href="{{ url('dashboard/hapus_data_karyawan') }}" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>    
-                                                </td>
+                                                        <a href='{{ url("dashboard/ubah_karyawan/$row->id") }}' type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a> |
+                                                        <a href='{{ url("dashboard/hapus_karyawan/$row->id") }}'' type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                    </td>
                                                 </tr>
+                                                @endforeach
+                                                @else
+                                                <tr><td colspan="6" align="center">No Data</td></tr>
+                                                @endif
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -163,6 +185,4 @@
         </div>
     </div>
     @stop
-    @section('scriptJS')
-    @include('data_karyawan.data_karyawan_js')
-    @stop
+    @section(' scriptJS') @include('data_karyawan.data_karyawan_js') @stop

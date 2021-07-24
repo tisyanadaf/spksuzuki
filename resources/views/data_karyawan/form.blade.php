@@ -19,46 +19,47 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <form action="#" class="form-horizontal form-bordered">
+                        <form action="{{ url('dashboard/input_karyawan') }}" method="post" class="form-horizontal form-bordered">
+                            {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">NIK</label>
                                     <div class="col-md-3">
-                                        <input placeholder="NIK" class="form-control" type="text">
+                                        <input name="nik" placeholder="NIK" class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">Nama Karyawan</label>
                                     <div class="col-md-6">
-                                        <input placeholder="Nama Karyawan" class="form-control" type="text">
+                                        <input name="nama_lengkap" placeholder="Nama Karyawan" class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">Divisi</label>
                                     <div class="col-md-3">
-                                        <select class="form-control custom-select">
+                                        <select name="divisi" class="form-control custom-select">
                                             <option selected value="" disabled>Pilih Divisi</option>
-                                            <option value="">Penjualan</option>
-                                            <option value="">Service</option>
+                                            <option value="penjualan">Penjualan</option>
+                                            <option value="service">Service</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">Jabatan</label>
                                     <div class="col-md-3">
-                                        <input placeholder="Jabatan" class="form-control" type="text">
+                                        <input name="jabatan" placeholder="Jabatan" class="form-control" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">Tanggal Masuk</label>
                                     <div class="col-md-3">
-                                        <input class="form-control" placeholder="dd/mm/yyyy" type="date">
+                                        <input name="tgl_masuk" class="form-control" placeholder="dd/mm/yyyy" type="date">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col offset-md-4">
-                                    <button type="button" class="btn btn-success m-2">Simpan</button>
+                                    <button type="submit" class="btn btn-success m-2">Simpan</button>
                                 </div>
                             </div>
                         </form>
