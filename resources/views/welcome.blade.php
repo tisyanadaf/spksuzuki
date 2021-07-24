@@ -168,7 +168,7 @@
         </div>
     </div>
     <br><br>
-    <footer class="main-footer">
+    <footer class="main-footer" style="margin-left: 0;">
         <div class="pull-right hidden-xs">Version 1.2</div>
         Copyright © 2021 PT. Dwi Perkasa Mobiltama Cibubur
     </footer>

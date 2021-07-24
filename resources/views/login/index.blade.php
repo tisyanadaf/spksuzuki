@@ -76,6 +76,10 @@
     </div>
     </div>
   </center>
+  <footer class="main-footer" style="margin-left: 0;">
+    <div class="pull-right hidden-xs">Version 1.2</div>
+    Copyright © 2021 PT. Dwi Perkasa Mobiltama Cibubur
+  </footer>
   <!-- jQuery 3 -->
   <script src="{{asset('dist/js/jquery.min.js')}}"></script>
 
@@ -84,10 +88,6 @@
 
   <!-- template -->
   <script src="{{asset('dist/js/niche.js')}}"></script>
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">Version 1.2</div>
-    Copyright © 2021 PT. Dwi Perkasa Mobiltama Cibubur
-  </footer>
   @include('login.login_js')
 </body>
 
