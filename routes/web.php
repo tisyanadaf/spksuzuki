@@ -31,7 +31,7 @@ Route::middleware(['isLogged'])->group(function () {
     Route::post('/dashboard/input_karyawan', 'DataKaryawanController@store');
     Route::get('/dashboard/ubah_karyawan/{id}', 'DataKaryawanController@store');
     Route::post('/dashboard/ubah_karyawan/{id}', 'DataKaryawanController@store');
-    Route::delete('/dashboard/delete_karyawan/{id}', 'DataKaryawanController@delete');
+    Route::get('/dashboard/hapus_karyawan/{id}', 'DataKaryawanController@delete');
 
     // Penilaian
     Route::get('/dashboard/penilaian', function () {

@@ -38,7 +38,7 @@ class Karyawan extends Model
             // Create with username and password
             $result = DB::insert("insert into $this->table_name 
             (nik, nama_lengkap, tgl_masuk, divisi, jabatan, username, password, role, created_at, updated_at) 
-            values ('$values->nik', '$values->nama_lengkap', '$values->tgl_masuk', '$values->divisi', '$values->jabatan', '$values->username', '$values->password', '$role','$values->created_at', '$values->updated_at')");
+            values ('$values->nik', '$values->nama_lengkap', '$values->tgl_masuk', '$values->divisi', '$values->jabatan', '$values->username', 'bcrypt($values->password)', '$role','$values->created_at', '$values->updated_at')");
             return $result;
         }
     }
@@ -54,7 +54,7 @@ class Karyawan extends Model
             // Update with username and password
             $result = DB::update("update $this->table_name set nik = '$values->nik', nama_lengkap = '$values->nama_lengkap',
             tgl_masuk = '$values->tgl_masuk', divisi = '$values->divisi', jabatan = '$values->jabatan', username = '$values->username',
-            password = '$values->password', role = '$role', updated_at = '$values->updated_at'  where id = '$id'");
+            password = 'bcrypt($values->password)', role = '$role', updated_at = '$values->updated_at'  where id = '$id'");
             return $result;
         }
     }

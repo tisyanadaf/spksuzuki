@@ -44,7 +44,7 @@ class DataKaryawanController extends Controller
                 if ($result) {
                     $request->session()->flash('success', 'Data karyawan berhasil dibuat');
                 } else {
-                    $request->session()->flash('failed', 'Data karyawan berhasil dibuat');
+                    $request->session()->flash('failed', 'Data karyawan gagal dibuat');
                 }
 
                 return redirect('dashboard/data_karyawan');
@@ -79,10 +79,11 @@ class DataKaryawanController extends Controller
     public function delete($id)
     {
         $karyawan = $this->karyawan_model->get_data_by('id', $id);
+        $nama = strval($karyawan[0]->nama_lengkap);
 
         if (count($karyawan) !== 0) {
             $this->karyawan_model->delete_data($id);
-            return redirect('dashboard/data_karyawan')->with('success', "Data $karyawan[0]['nama_lengkap'] berhasil dihapus");
+            return redirect('dashboard/data_karyawan')->with('success', "Data $nama berhasil dihapus");
         }
 
         return redirect('dashboard/data_karyawan')->with('failed', 'Data gagal dihapus');

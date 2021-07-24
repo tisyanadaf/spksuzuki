@@ -59,7 +59,6 @@ class LoginController extends Controller
         if (Auth::guard('web')->attempt($credentials)) {
             return redirect('dashboard');
         } else {
-            print_r('Ga');
             $request->session()->flash('error_login', 'Login Gagal, Cek Kembali Username dan Password');
             return redirect('login');
         }

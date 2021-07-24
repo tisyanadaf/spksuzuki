@@ -15,10 +15,10 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle"></i> <span class="hidden-xs">Kepala Cabang</span> </a>
+                        <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle"></i> <span class="hidden-xs">{{ucfirst(auth()->user()->username)}}</span> </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header" style="height: 80px !important;">
-                                    <p class="text-left">Kepala Cabang <small>PT. Dwi Perkasa Mobiltama</small> </p>
+                                    <p class="text-left">{{ucfirst(auth()->user()->username)}} <small>PT. Dwi Perkasa Mobiltama</small> </p>
                                 </li>
                                 <li><a href="#"><i class="fa fa-id-card"></i> Kelola Akun</a></li>
                                 <li><a href="#"><i class="fa fa-group"></i> Kelola Data Admin</a></li>
