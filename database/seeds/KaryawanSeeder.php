@@ -21,7 +21,7 @@ class KaryawanSeeder extends Seeder
                 'divisi' => 'penjualan',
                 'jabatan' => 'Kepala Cabang',
                 'username' => 'tangguh',
-                'password' => 'admin123',
+                'password' => '$2y$10$r3uZ8j/QdkpkrAylOyIOVupQ1ywm4UxiO6iNFe03WRLMKosaJTkFS',
                 'role' => 'admin',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),

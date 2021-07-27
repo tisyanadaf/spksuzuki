@@ -43,4 +43,14 @@ Route::middleware(['isLogged'])->group(function () {
     Route::get('/dashboard/hasil_nilai', function () {
         return view('penilaian.detail');
     });
+
+    //Profile
+    Route::get('/dashboard/profile', function () {
+        return view('profile.index');
+    });
+
+    //Profile
+    Route::get('/dashboard/data_admin', function () {
+        return view('data_admin.index');
+    });
 });

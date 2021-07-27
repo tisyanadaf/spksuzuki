@@ -20,8 +20,8 @@
                                 <li class="user-header" style="height: 80px !important;">
                                     <p class="text-left">{{ucfirst(auth()->user()->username)}} <small>PT. Dwi Perkasa Mobiltama</small> </p>
                                 </li>
-                                <li><a href="#"><i class="fa fa-id-card"></i> Kelola Akun</a></li>
-                                <li><a href="#"><i class="fa fa-group"></i> Kelola Data Admin</a></li>
+                                <li><a href="{{ url('dashboard/profile') }}"><i class="fa fa-id-card"></i> Kelola Akun</a></li>
+                                <li><a href="{{ url('dashboard/data_admin') }}"><i class="fa fa-group"></i> Kelola Data Admin</a></li>
                                 <li><a href="{{ url('logout') }}"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
                         </li>
