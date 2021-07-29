@@ -18,9 +18,9 @@ class DataKaryawanController extends Controller
 
     public function index()
     {
-        $data['all_karyawan'] = $this->karyawan_model->get_all();
-        $data['penjualan'] = $this->karyawan_model->get_data_by('divisi', 'penjualan');
-        $data['service'] = $this->karyawan_model->get_data_by('divisi', 'service');
+        $data['all_karyawan'] = $this->karyawan_model->get_all('karyawan');
+        $data['penjualan'] = $this->karyawan_model->get_data_by('divisi', 'penjualan', 'karyawan');
+        $data['service'] = $this->karyawan_model->get_data_by('divisi', 'service', 'karyawan');
         return view('data_karyawan.index', $data);
     }
 

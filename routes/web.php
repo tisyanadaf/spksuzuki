@@ -49,8 +49,11 @@ Route::middleware(['isLogged'])->group(function () {
         return view('profile.index');
     });
 
-    //Profile
-    Route::get('/dashboard/data_admin', function () {
-        return view('data_admin.index');
-    });
+    //Data Admin
+    Route::get('/dashboard/data_admin', 'AdminController@index');
+    Route::get('/dashboard/input_admin', 'AdminController@store');
+    Route::post('/dashboard/input_admin', 'AdminController@store');
+    Route::get('/dashboard/ubah_admin/{id}', 'AdminController@store');
+    Route::post('/dashboard/ubah_admin/{id}', 'AdminController@store');
+    Route::get('/dashboard/hapus_admin/{id}', 'AdminController@delete');
 });
