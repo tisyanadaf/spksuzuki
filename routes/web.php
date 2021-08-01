@@ -45,9 +45,8 @@ Route::middleware(['isLogged'])->group(function () {
     });
 
     //Profile
-    Route::get('/dashboard/profile', function () {
-        return view('profile.index');
-    });
+    Route::get('/dashboard/profile/{id}', 'AdminController@store');
+    Route::post('/dashboard/profile/{id}', 'AdminController@store');
 
     //Data Admin
     Route::get('/dashboard/data_admin', 'AdminController@index');

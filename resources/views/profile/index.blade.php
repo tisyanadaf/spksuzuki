@@ -17,16 +17,16 @@
         <div class="col-lg-4">
           <div class="info-box">
             <div class="box-body"> <strong><i class="fa fa-book margin-r-5"></i> Nama</strong>
-              <p class="text-muted"> Tangguh </p>
+              <p class="text-muted" value="{{$karyawan[0]->nama_lengkap}}"></p>
               <hr>
               <strong><i class="fa fa-map-marker margin-r-5"></i> Jabatan </strong>
-              <p class="text-muted">Kepala Cabang</p>
+              <p class="text-muted" value="{{$karyawan[0]->jabatan}}"></p>
               <hr>
               <strong><i class="fa fa-envelope margin-r-5"></i> Username</strong>
-              <p class="text-muted">tangguh</p>
+              <p class="text-muted" value="{{$karyawan[0]->username}}"></p>
               <hr>
               <strong><i class="fa fa-phone margin-r-5"></i> Tanggal Masuk</strong>
-              <p>(123) 456-7890 </p>
+              <p value="{{$karyawan[0]->tgl_masuk}}"></p>
               <hr>
             </div>
             <!-- /.box-body --> 
@@ -42,35 +42,40 @@
               <!-- Tab panes -->
                 <div class="tab-pane" id="settings" role="tabpanel">
                   <div class="card-body">
-                    <form class="form-horizontal form-material">
+                  <form action='{{ url("dashboard/profile/$id") }}' method="post" class="form-horizontal form-bordered">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label class="col-md-12">Password</label>
+                        <div class="col-md-12">
+                        <input name="nik" value="{{$karyawan[0]->nik}}" placeholder="NIK" class="form-control form-control-line" type="text">
+                        </div>
+                      </div>
                       <div class="form-group">
                         <label class="col-md-12">Nama Lengkap</label>
                         <div class="col-md-12">
-                          <input placeholder="Florence Douglas" class="form-control form-control-line" type="text">
+                          <input name="nama_lengkap" value="{{$karyawan[0]->nama_lengkap}}" placeholder="Nama Karyawan" class="form-control form-control-line" type="text">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="example-email" class="col-md-12">Divisi</label>
                         <div class="col-md-12">
-                          <input placeholder="florencedouglas@admin.com" class="form-control form-control-line" name="example-email" id="example-email" type="email">
+                        <select name="divisi" value="{{$karyawan[0]->divisi}}" class="form-control custom-select">
+                            <option value="" disabled>Pilih Divisi</option>
+                            <option value="penjualan" @if($karyawan[0]->divisi === 'penjualan') selected @endif>Penjualan</option>
+                            <option value="service" @if($karyawan[0]->divisi === 'service') selected @endif>Service</option>
+                        </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="example-email" class="col-md-12">Jabatan</label>
                         <div class="col-md-12">
-                          <input placeholder="florencedouglas@admin.com" class="form-control form-control-line" name="example-email" id="example-email" type="email">
+                        <input name="jabatan" value="{{$karyawan[0]->jabatan}}" placeholder="Jabatan" class="form-control" type="text">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="example-email" class="col-md-12">Username</label>
                         <div class="col-md-12">
-                          <input placeholder="florencedouglas@admin.com" class="form-control form-control-line" name="example-email" id="example-email" type="email">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-12">Password</label>
-                        <div class="col-md-12">
-                          <input value="password" class="form-control form-control-line" type="password">
+                        <input name="username" value="{{$karyawan[0]->username}}" placeholder="Jabatan" class="form-control" type="text">
                         </div>
                       </div>
                       <div class="form-group">
@@ -93,5 +98,5 @@
 
     @stop
     @section('scriptJS')
-    @include('penilaian.penilaian_js')
+    @include('profile.profile_js')
     @stop

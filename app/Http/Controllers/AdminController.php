@@ -60,7 +60,8 @@ class AdminController extends Controller
                 $values->username = $request->username;
                 $values->password = $password;
                 $values->updated_at = $date->format('Y-m-d H:i:s');
-
+                // $baru = 'auth()->user()->id';
+                // print_r($baru);
                 $result = $this->admin_model->update_data($values, $id, 'admin');
                 if ($result) {
                     $request->session()->flash('success', 'Data admin berhasil diedit');
