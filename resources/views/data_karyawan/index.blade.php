@@ -184,5 +184,8 @@
             </div>
         </div>
     </div>
-    @stop
-    @section(' scriptJS') @include('data_karyawan.data_karyawan_js') @stop
+</div>
+@stop
+@section('scriptJS')
+@include('data_karyawan.data_karyawan_js')
+@stop

@@ -34,15 +34,10 @@ Route::middleware(['isLogged'])->group(function () {
     Route::get('/dashboard/hapus_karyawan/{id}', 'DataKaryawanController@delete');
 
     // Penilaian
-    Route::get('/dashboard/penilaian', function () {
-        return view('penilaian.index');
-    });
-    Route::get('/dashboard/input_nilai', function () {
-        return view('penilaian.form');
-    });
-    Route::get('/dashboard/hasil_nilai', function () {
-        return view('penilaian.detail');
-    });
+    Route::get('/dashboard/penilaian', 'PenilaianController@index');
+    Route::get('/dashboard/input_nilai/{id}', 'PenilaianController@input');
+    Route::get('/dashboard/review_nilai/{id}', 'PenilaianController@review');
+    Route::get('/dashboard/hasil_nilai', 'PenilaianController@detail_nilai_karyawan');
 
     //Profile
     Route::get('/dashboard/profile', 'AdminController@profile');

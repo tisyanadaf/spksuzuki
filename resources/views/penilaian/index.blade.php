@@ -32,27 +32,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @if (count($karyawan) !== 0)
+                                        @foreach ($karyawan as $row)
                                         <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
+                                            <td>{{ $row->nik }}</td>
+                                            <td>{{ strtoupper($row->nama_lengkap) }}</td>
+                                            <td>{{ strtoupper($row->jabatan) }}</td>
+                                            <td>{{ strtoupper($row->divisi) }}</td>
+                                            <td>{{ $row->tgl_masuk }}</td>
+                                            <td>
+                                                @if ($row->id_karyawan != null)
+                                                <a href='{{ url("dashboard/review_nilai/$row->id") }}' type="button" class="btn btn-sm btn-success">Lihat Nilai</a>
+                                                @else
+                                                <a href='{{ url("dashboard/input_nilai/$row->id") }}' type="button" class="btn btn-sm btn-info">Nilai</a>
+                                                @endif
                                             </td>
-                                            <td>Win 95+</td>
-                                            <td>Nilai</a></td>
-                                            <td>X</td>
-                                            <td><a href="{{ url('dashboard/input_nilai') }}" type="button" class="btn btn-sm btn-warning">Nilai</a></td>
                                         </tr>
+                                        @endforeach
+                                        @else
                                         <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>Nilai</a></td>
-                                            <td>X</td>
-                                            <td width="100"><span class="label label-success">Sudah dinilai</span> <a href="{{ url('dashboard/input_nilai') }}"> Lihat </a></td>
-                                            
+                                            <td colspan="6" align="center">No Data</td>
                                         </tr>
+                                        @endif
                                     </tbody>
                                     <tfoot>
                                         <tr>

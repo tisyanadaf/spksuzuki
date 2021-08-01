@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="text-black p-2">Nama Karyawan : xxxxxxxxx</h5>
+                        <h5 class="text-black p-2">Nama Karyawan : {{$karyawan[0]->nama_lengkap}}</h5>
                         <hr>
                         <div id="demo">
                             <div class="step-app">

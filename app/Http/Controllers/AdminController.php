@@ -29,8 +29,8 @@ class AdminController extends Controller
         $values =  new stdClass();
 
         if ($request->isMethod('post')) {
-            $password = bcrypt($request->password);
             if ($form === 'tambah') {
+                $password = bcrypt($request->password);
                 $values->nik = $request->nik;
                 $values->nama_lengkap = $request->nama_lengkap;
                 $values->tgl_masuk = $request->tgl_masuk;
@@ -58,7 +58,6 @@ class AdminController extends Controller
                 $values->divisi = $request->divisi;
                 $values->jabatan = $request->jabatan;
                 $values->username = $request->username;
-                $values->password = $password;
                 $values->updated_at = $date->format('Y-m-d H:i:s');
 
                 $result = $this->admin_model->update_data($values, $id, 'admin');

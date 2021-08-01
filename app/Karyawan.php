@@ -62,10 +62,16 @@ class Karyawan extends Model
         } else {
             // Update with username and password
             $result = DB::update("update $this->table_name set nik = '$values->nik', nama_lengkap = '$values->nama_lengkap',
-            tgl_masuk = '$values->tgl_masuk', divisi = '$values->divisi', jabatan = '$values->jabatan', username = '$values->username',
-            password = '$values->password', role = '$role', updated_at = '$values->updated_at'  where id = '$id'");
+            tgl_masuk = '$values->tgl_masuk', divisi = '$values->divisi', jabatan = '$values->jabatan', username = '$values->username', role = '$role', updated_at = '$values->updated_at'  where id = '$id'");
             return $result;
         }
+    }
+
+    public function update_password($id, $new_password)
+    {
+       $result = DB::update("update $this->table_name set password = '$new_password' where id = '$id'");
+       return $result;
+
     }
 
     public function delete_data($id)
