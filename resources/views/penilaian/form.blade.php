@@ -46,13 +46,14 @@
                     <div class="card-body">
                         <h5 class="text-black p-2">Nama Karyawan : {{$karyawan[0]->nama_lengkap}}</h5>
                         <hr>
-                        <div id="demo">
+                        <form id="demo" action="{{ url('dashboard/input_nilai') }}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="id_karyawan" value="{{$karyawan[0]->id}}" />
                             <div class="step-app">
                                 <ul class="step-steps">
                                     <li><a href="#step1"><span class="number">1</span> Aspek Evaluasi</a></li>
                                     <li><a href="#step2"><span class="number">2</span> Aspek Intelektual</a></li>
                                     <li><a href="#step3"><span class="number">3</span> Aspek Softskill</a></li>
-                                    <li><a href="#step4"><span class="number">4</span> Ranking dan Kesimpulan</a></li>
                                 </ul>
                                 <div class="step-content">
                                     <div class="step-tab-panel" id="step1">
@@ -60,25 +61,25 @@
                                             <div class="row m-t-2">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="firstName1">Kualitas Kerja :</label>
-                                                        <select class="form-control custom-select">
+                                                        <label for="kualitas_kerja">Kualitas Kerja :</label>
+                                                        <select id="kualitas_kerja" required name="kualitas_kerja" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="">1</option>
-                                                            <option value="">2</option>
-                                                            <option value="">3</option>
-                                                            <option value="">4</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="firstName1">Disiplin Kerja :</label>
-                                                        <select class="form-control custom-select">
+                                                        <label for="disiplin_kerja">Disiplin Kerja :</label>
+                                                        <select id="disiplin_kerja" required name="disiplin_kerja" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="">1</option>
-                                                            <option value="">2</option>
-                                                            <option value="">3</option>
-                                                            <option value="">4</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -86,25 +87,25 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="firstName1">Kuantitas Kerja :</label>
-                                                        <select class="form-control custom-select">
+                                                        <label for="kuantitas_kerja">Kuantitas Kerja :</label>
+                                                        <select id="kuantitas_kerja" required name="kuantitas_kerja" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="">1</option>
-                                                            <option value="">2</option>
-                                                            <option value="">3</option>
-                                                            <option value="">4</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lastName1">Kerja Sama :</label>
-                                                        <select class="form-control custom-select">
+                                                        <label for="kerja_sama">Kerja Sama :</label>
+                                                        <select id="kerja_sama" required name="kerja_sama" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="">1</option>
-                                                            <option value="">2</option>
-                                                            <option value="">3</option>
-                                                            <option value="">4</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -115,25 +116,25 @@
                                         <div class="row m-t-2">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="jobTitle1">Pengetahuan dan Keterampilan Kerja :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="pengetahuan">Pengetahuan dan Keterampilan Kerja :</label>
+                                                    <select id="pengetahuan" required name="pengetahuan" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="videoUrl1">Koordinasi atau Pendelegasian Tugas :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="koordinasi">Koordinasi atau Pendelegasian Tugas :</label>
+                                                    <select id="koordinasi" required name="koordinasi" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -141,13 +142,13 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="videoUrl1">Minat dalam Kerja :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="minat_kerja">Minat dalam Kerja :</label>
+                                                    <select id="minat_kerja" required name="minat_kerja" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -157,25 +158,25 @@
                                         <div class="row m-t-2">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="int1">Pengambilan Keputusan atau Teknik Mengatasi Masalah :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="keputusan_masalah">Pengambilan Keputusan atau Teknik Mengatasi Masalah :</label>
+                                                    <select id="keputusan_masalah" required name="keputusan_masalah" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="jobTitle2">Penyesuaian Diri :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="penyesuaian_diri">Penyesuaian Diri :</label>
+                                                    <select id="penyesuaian_diri" required name="penyesuaian_diri" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -183,53 +184,53 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="jobTitle2">Kemampuan Berkomunikasi :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="komunikasi">Kemampuan Berkomunikasi :</label>
+                                                    <select id="komunikasi" required name="komunikasi" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="step-tab-panel" id="step4">
+                                    <!-- <div class="step-tab-panel" id="step4">
                                         <div class="row m-t-2">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="behName1">Notes :</label>
-                                                    <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
+                                                    <label for="notes">Notes :</label>
+                                                    <textarea id="notes" name="notes" class="form-control" id="basicTextarea" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="decisions1">Ranking</label>
-                                                    <input class="form-control" type="text">
+                                                    <label for="ranking">Ranking</label>
+                                                    <input disabled value="data" id="ranking" required name="ranking" class="form-control" type="text">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Kesimpulan :</label>
-                                                    <select class="form-control custom-select">
+                                                    <label for="kesimpulan">Kesimpulan :</label>
+                                                    <select id="kesimpulan" required name="kesimpulan" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
-                                                        <option value="">Promosi</option>
-                                                        <option value="">Mutasi</option>
-                                                        <option value="">Demosi</option>
-                                                        <option value="">Training</option>
-                                                        <option value="">PHK</option>
+                                                        <option value="promosi">Promosi</option>
+                                                        <option value="mutasi">Mutasi</option>
+                                                        <option value="demosi">Demosi</option>
+                                                        <option value="training">Training</option>
+                                                        <option value="phk">PHK</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="step-footer">
-                                    <button data-direction="prev" class="btn btn-light">Previous</button>
-                                    <button data-direction="next" class="btn btn-primary">Next</button>
-                                    <button data-direction="finish" class="btn btn-primary">Submit</button>
+                                    <button type="button" data-direction="prev" class="btn btn-light">Previous</button>
+                                    <button type="button" data-direction="next" class="btn btn-primary">Next</button>
+                                    <button type="submit" data-direction="finish" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

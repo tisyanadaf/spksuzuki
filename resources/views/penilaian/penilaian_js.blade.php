@@ -8,7 +8,7 @@
 <script>
     $('#demo').steps({
         onFinish: function() {
-            alert('Wizard Completed');
+            $('#demo').submit();
         }
     });
 </script>

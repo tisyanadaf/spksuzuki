@@ -27,6 +27,8 @@ class PenilaianController extends Controller
         $form = is_null($id) ? 'tambah' : 'edit';
         $date = new DateTime();
         $values =  new stdClass();
+
+        dd($request);
     }
 
     public function input($id)
@@ -46,5 +48,11 @@ class PenilaianController extends Controller
     {
         // Panggil data karyawan dan nilai untuk disabled
         return view('penilaian.detail');
+    }
+
+    public function rekap($id)
+    {
+        // Panggil data karyawan dan nilai untuk disabled
+        return view('penilaian.rekap');
     }
 }
