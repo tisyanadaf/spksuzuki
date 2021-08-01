@@ -45,7 +45,7 @@ Route::middleware(['isLogged'])->group(function () {
     });
 
     //Profile
-    Route::get('/dashboard/profile/{id}', 'AdminController@store');
+    Route::get('/dashboard/profile', 'AdminController@profile');
     Route::post('/dashboard/profile/{id}', 'AdminController@store');
 
     //Data Admin
