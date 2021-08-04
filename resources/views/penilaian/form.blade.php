@@ -158,7 +158,7 @@
                                         <div class="row m-t-2">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="keputusan_masalah">Pengambilan Keputusan atau Teknik Mengatasi Masalah :</label>
+                                                    <label for="keputusan_masalah">Teknik Mengatasi Masalah :</label>
                                                     <select id="keputusan_masalah" required name="keputusan_masalah" class="form-control custom-select">
                                                         <option selected value="" disabled>Pilih Penilaian</option>
                                                         <option value="1">1</option>

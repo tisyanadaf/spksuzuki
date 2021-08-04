@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblKriteria extends Migration
+class TblAspek extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTblKriteria extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_kriteria', function (Blueprint $table) {
+        Schema::create('tbl_aspek', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_aspek');
-            $table->string('nama_kriteria');
-            $table->float('nilai_ideal');
+            $table->string('nama_aspek');
+            $table->string('cf_persen');
+            $table->string('sf_persen');
+            $table->string('bobot_persen');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTblKriteria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_kriteria');
+        //
     }
 }
