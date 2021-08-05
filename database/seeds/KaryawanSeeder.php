@@ -26,7 +26,18 @@ class KaryawanSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
+            [
+                'nik' => '987654321',
+                'nama_lengkap' => 'Tisya Nada Fitriana',
+                'tgl_masuk' => '2021-05-01',
+                'divisi' => 'penjualan',
+                'jabatan' => 'Karyawan',
+                'username' => null,
+                'password' => null,
+                'role' => 'karyawan',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
         ]);
-
     }
 }

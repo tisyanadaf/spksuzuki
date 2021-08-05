@@ -15,7 +15,6 @@ class CreateTblGapKriteria extends Migration
     {
         Schema::create('tbl_gap_kriteria', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_kriteria');
             $table->string('selisih');
             $table->string('bobot_nilai');
             $table->string('keterangan');

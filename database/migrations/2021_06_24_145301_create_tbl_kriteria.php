@@ -17,7 +17,7 @@ class CreateTblKriteria extends Migration
             $table->bigIncrements('id');
             $table->string('id_aspek');
             $table->string('nama_kriteria');
-            $table->float('nilai_ideal');
+            $table->integer('nilai_ideal');
             $table->timestamps();
         });
     }
