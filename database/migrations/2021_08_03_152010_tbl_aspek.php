@@ -16,9 +16,9 @@ class TblAspek extends Migration
         Schema::create('tbl_aspek', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_aspek');
-            $table->string('cf_persen');
-            $table->string('sf_persen');
-            $table->string('bobot_persen');
+            $table->float('cf_persen');
+            $table->float('sf_persen');
+            $table->float('bobot_persen');
             $table->timestamps();
         });
     }
