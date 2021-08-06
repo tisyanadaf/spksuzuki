@@ -109,8 +109,28 @@ class PenilaianController extends Controller
         $total_softskill = (0.6 * $cf_softskill) + (0.4 * $sf_softskill);
         // Perhitungan nilai total dan ranking
         $nilai_total = (0.5 * $total_evaluasi) + (0.2 * $total_intelektual) + (0.3* $total_softskill);
-        
-        dd($nilai_total);
+        switch ($nilai_total) {
+            case $nilai_total > 2.36 && $nilai_total < 2.78:
+                $kesimpulan = "phk";
+                break;
+            case $nilai_total > 2.79 && $nilai_total < 3.29:
+                $kesimpulan = "training";
+                break;
+            case $nilai_total > 3.30 && $nilai_total < 3.80:
+                $kesimpulan = "demosi";
+                break;
+            case $nilai_total > 3.81 && $nilai_total < 4.31:
+                $kesimpulan = "mutasi";
+                break;
+            case $nilai_total > 4.32 && $nilai_total < 4.82:
+                $kesimpulan = "promosi";
+                break;
+            
+            default:
+                $kesimpulan = '';
+                break;
+        }
+        dd($nilai_total, $kesimpulan);
     }
 
     public function input($id)
