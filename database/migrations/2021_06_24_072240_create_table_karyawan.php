@@ -17,6 +17,7 @@ class CreateTableKaryawan extends Migration
             $table->bigIncrements('id');
             $table->string('nik');
             $table->string('nama_lengkap');
+            $table->string('jenis_kelamin');
             $table->date('tgl_masuk');
             $table->enum('divisi', ['penjualan', 'service']);
             $table->string('jabatan');
