@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Karyawan;
 use App\Penilaian;
 use DateTime;
 use Illuminate\Http\Request;
@@ -10,15 +11,17 @@ use stdClass;
 class PenilaianController extends Controller
 {
     private $penilaian_model;
+    private $karyawan_model;
 
     public function __construct()
     {
         $this->penilaian_model = new Penilaian;
+        $this->karyawan_model = new Karyawan;
     }
 
     public function index()
     {
-        $data['karyawan'] = $this->penilaian_model->get_karyawan_all();
+        $data['karyawan'] = $this->karyawan_model->get_karyawan_with_nilai();
         return view('penilaian.index', $data);
     }
 
@@ -136,7 +139,7 @@ class PenilaianController extends Controller
     public function input($id)
     {
         // Panggil data karyawan untuk input
-        $data['karyawan'] = $this->penilaian_model->get_karyawan_by('id', $id);
+        $data['karyawan'] = $this->karyawan_model->get_data_by('id', $id);
         return view('penilaian.form', $data);
     }
 
