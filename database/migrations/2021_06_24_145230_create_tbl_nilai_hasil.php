@@ -17,7 +17,6 @@ class CreateTblNilaiHasil extends Migration
             $table->bigIncrements('id');
             $table->string('id_karyawan');
             $table->string('nilai_akhir');
-            $table->string('ranking');
             $table->string('notes');
             $table->string('kesimpulan');
             $table->timestamps();

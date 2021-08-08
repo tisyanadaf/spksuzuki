@@ -18,8 +18,6 @@ class CreateTblNilai extends Migration
             $table->string('id_kriteria');
             $table->string('id_karyawan');
             $table->string('nilai');
-            $table->string('nilai_gap');
-            $table->string('nilai_gap_bobot');
             $table->timestamps();
         });
     }

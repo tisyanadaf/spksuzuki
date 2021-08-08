@@ -16,7 +16,7 @@ class CreateTblNilaiCfSf extends Migration
         Schema::create('tbl_nilai_cf_sf', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_karyawan');
-            $table->string('id_kriteria');
+            $table->string('id_aspek');
             $table->string('nilai_cf');
             $table->string('nilai_sf');
             $table->string('nilai_total');

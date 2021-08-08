@@ -26,22 +26,22 @@
                         <tr>
                             <td> <strong> NIK </strong> </td>
                             <td> : </td>
-                            <td> {{auth()->user()->nik}} </td>
-                        </td>
+                            <td> {{$karyawan['0']->nik}} </td>
+                            </td>
                         <tr>
                             <td> <strong> Nama Karyawan </strong> </td>
                             <td> : </td>
-                            <td> {{auth()->user()->nama_lengkap}} </td>
+                            <td> {{$karyawan['0']->nama_lengkap}} </td>
                         </tr>
                         <tr>
                             <td> <strong> Jabatan </strong> </td>
                             <td> : </td>
-                            <td> {{auth()->user()->jabatan}} </td>
+                            <td> {{$karyawan['0']->jabatan}} </td>
                         </tr>
                         <tr>
                             <td> <strong> Divisi </strong> </td>
                             <td> : </td>
-                            <td> {{auth()->user()->divisi}} </td>
+                            <td> {{strtoupper($karyawan['0']->divisi)}} </td>
                         </tr>
                         <tr>
                             <td> <strong> Penilaian </strong> </td>
@@ -52,22 +52,22 @@
                         <tr>
                             <td>Kualitas Kerja</td>
                             <td> : </td>
-                            <td>  </td>
+                            <td> {{$nilai_per_kriteria[0]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Kuantitas Kerja</td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_per_kriteria[1]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Disiplin Kerja</td>
                             <td> : </td>
-                            <td> </td>
+                            <td>{{$nilai_per_kriteria[2]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Kerja Sama</td>
                             <td> : </td>
-                            <td>  </td>
+                            <td> {{$nilai_per_kriteria[3]->nilai}} </td>
                         </tr>
                         <tr>
                             <td><strong> B. Aspek Intelektual </strong></td>
@@ -75,17 +75,17 @@
                         <tr>
                             <td>Pengetahuan dan Keterampilan Kerja</td>
                             <td> : </td>
-                            <td>  </td>
+                            <td> {{$nilai_per_kriteria[4]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Koordinasi atau Pendelegasian Tugas</td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_per_kriteria[5]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Minat dalam Kerja</td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_per_kriteria[6]->nilai}} </td>
                         </tr>
                         <tr>
                             <td><strong> C. Aspek Softskill </strong></td>
@@ -93,41 +93,41 @@
                         <tr>
                             <td>Teknik Mengatasi Masalah</td>
                             <td> : </td>
-                            <td>  </td>
+                            <td> {{$nilai_per_kriteria[7]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Kemampuan Berkomunikasi</td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_per_kriteria[8]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Penyesuaian Diri </td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_per_kriteria[9]->nilai}} </td>
                         </tr>
                         <tr>
                             <td><strong> Hasil Nilai </strong> </td>
                             <td> : </td>
-                            <td> </td>
+                            <td> {{$nilai_hasil[0]->nilai_akhir}} </td>
                         </tr>
                         <tr>
                             <td><strong> Kesimpulan </strong> </td>
                             <td> : </td>
-                            <td> 
+                            <td>
                                 <select name="kesimpulan" class="form-control custom-select">
                                     <option value="">Pilih Kesimpulan</option>
-                                    <option value="promosi">Promosi</option>
-                                    <option value="mutasi">Mutasi</option>
-                                    <option value="demosi">Demosi</option>
-                                    <option value="training">Training</option>
-                                    <option value="phk">PHK</option>
+                                    <option value="promosi" @if($nilai_hasil[0]->kesimpulan === 'promosi') selected @endif>Promosi</option>
+                                    <option value="mutasi" @if($nilai_hasil[0]->kesimpulan === 'mutasi') selected @endif>Mutasi</option>
+                                    <option value="demosi" @if($nilai_hasil[0]->kesimpulan === 'demosi') selected @endif>Demosi</option>
+                                    <option value="training" @if($nilai_hasil[0]->kesimpulan === 'training') selected @endif>Training</option>
+                                    <option value="phk" @if($nilai_hasil[0]->kesimpulan === 'phk') selected @endif>PHK</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td><strong> Notes </strong> </td>
                             <td> : </td>
-                            <td> 
+                            <td>
                                 <fieldset class="form-group">
                                     <textarea class="form-control" id="note" name="note" rows="3"></textarea>
                                 </fieldset>
@@ -151,7 +151,7 @@
                                     </div>
                                 </div>
                             </td>
-                        </tr> 
+                        </tr>
                     </table>
                 </div>
             </div>

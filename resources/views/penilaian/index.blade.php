@@ -42,7 +42,7 @@
                                             <td>{{ $row->tgl_masuk }}</td>
                                             <td>
                                                 @if ($row->id_karyawan != null)
-                                                <a href='{{ url("dashboard/review_nilai/$row->id") }}' type="button" class="btn btn-sm btn-success">Lihat Nilai</a>
+                                                <a href='{{ url("dashboard/rekap_nilai/$row->id") }}' type="button" class="btn btn-sm btn-success">Lihat Nilai</a>
                                                 @else
                                                 <a href='{{ url("dashboard/input_nilai/$row->id") }}' type="button" class="btn btn-sm btn-info">Nilai</a>
                                                 @endif
