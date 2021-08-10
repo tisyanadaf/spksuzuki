@@ -18,6 +18,16 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+                        @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                        @endif
+                        @if (Session::has('failed'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('failed') }}
+                        </div>
+                        @endif
                         <div class="info-box m-t-1">
                             <div class="table-responsive">
                                 <table id="tbl_hasil" class="table table-bordered table-striped">

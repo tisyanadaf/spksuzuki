@@ -61,4 +61,10 @@ class Penilaian extends Model
         }
         return "4 rows effected";
     }
+
+    public function update_kesimpulan_notes($values, $id)
+    {
+        $result = DB::update("update $this->table_nilai_hasil set notes = '$values->notes', kesimpulan = '$values->kesimpulan', updated_at = '$values->updated_at' where id_karyawan = '$id'");
+        return $result;
+    }
 }

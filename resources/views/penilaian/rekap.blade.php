@@ -17,7 +17,9 @@
         <h3 class="text-center text-black">PT. Dwi Perkasa Mobiltama Cibubur</h3>
         <div class="row justify-content-center">
             <div class="col col-6">
-                <div class="card p-4">
+                <form method="POST" action='{{ url("dashboard/rekap_nilai/$id_karyawan") }}'' class="card p-4">
+                    {{csrf_field()}}
+                    <input type="hidden" name="nama_lengkap" value="{{$karyawan[0]->nama_lengkap}}"/>
                     <h4>
                         <div class="list-group-item list-group-item-success"><i class="fa fa-clipboard"></i><b> Rekap Nilai</b></div>
                     </h4>
@@ -129,7 +131,7 @@
                             <td> : </td>
                             <td>
                                 <fieldset class="form-group">
-                                    <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                                    <textarea class="form-control" id="note" name="notes" rows="3">{{$nilai_hasil[0]->notes}}</textarea>
                                 </fieldset>
                             </td>
                         </tr>
@@ -140,7 +142,7 @@
                             <td align="right">
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-warning">Ubah</button>
+                                        <a href='{{ url("dashboard/review_nilai/$id_karyawan") }}' class="btn btn-warning">Ubah</a>
                                     </div>
                                 </div>
                             </td>
@@ -153,15 +155,15 @@
                             </td>
                         </tr>
                     </table>
-                </div>
             </div>
         </div>
     </div>
-    @stop
-    @section('scriptJS')
-    <script>
-        var menu_active = document.getElementById('input-penilaian');
-        menu_active.classList.add('active');
-    </script>
-    @include('penilaian.penilaian_js')
-    @stop
+</div>
+@stop
+@section('scriptJS')
+<script>
+    var menu_active = document.getElementById('input-penilaian');
+    menu_active.classList.add('active');
+</script>
+@include('penilaian.penilaian_js')
+@stop

@@ -25,9 +25,8 @@ class PenilaianController extends Controller
         return view('penilaian.index', $data);
     }
 
-    public function store(Request $request, $id = null)
+    public function store_insert(Request $request)
     {
-        $form = is_null($id) ? 'tambah' : 'edit';
         $date = new DateTime();
         $values =  new stdClass();
         // Parameter
@@ -150,9 +149,22 @@ class PenilaianController extends Controller
         $this->penilaian_model->insert_nilai_hasil($values);
         $this->penilaian_model->insert_nilai($values);
         $this->penilaian_model->insert_nilai_cf_sf($values);
-        // dd($nilai_akhir, $kesimpulan);
-        // return view('penilaian.rekap');
+
         return redirect("/dashboard/rekap_nilai/$id_karyawan");
+    }
+
+    public function store_update(Request $request, $id)
+    {
+        $nama_lengkap = $request->input('nama_lengkap');
+        $date = new DateTime();
+        $values =  new stdClass();
+        if ($request->input('notes')) {
+            $values->notes = $request->input('notes');
+            $values->kesimpulan = $request->input('kesimpulan');
+            $values->updated_at = $date->format('Y-m-d H:i:s');
+            $this->penilaian_model->update_kesimpulan_notes($values, $id);
+            return redirect('/dashboard/penilaian')->with('success', "Anda sudah memberikan nilai untuk $nama_lengkap");
+        }
     }
 
     public function input($id)
@@ -165,7 +177,11 @@ class PenilaianController extends Controller
     public function review($id)
     {
         // Panggil data karyawan dan nilai untuk disabled
-        return view('penilaian.form');
+        $data['karyawan'] = $this->karyawan_model->get_data_by('id', $id);
+        $data['nilai_hasil'] = $this->penilaian_model->get_nilai_hasil_by('id_karyawan', $id);
+        $data['nilai_per_kriteria'] = $this->penilaian_model->get_nilai_kriteria_by('id_karyawan', $id);
+        dd($data);
+        return view('penilaian.form', $data);
     }
 
     public function detail_nilai_karyawan()
@@ -177,11 +193,12 @@ class PenilaianController extends Controller
     public function rekap($id)
     {
         // Panggil data karyawan dan nilai untuk disabled
+        $data['id_karyawan'] = $id;
         $data['karyawan'] = $this->karyawan_model->get_data_by('id', $id);
         $data['nilai_hasil'] = $this->penilaian_model->get_nilai_hasil_by('id_karyawan', $id);
         $data['nilai_per_kriteria'] = $this->penilaian_model->get_nilai_kriteria_by('id_karyawan', $id);
         if (empty($data['nilai_hasil'])) {
-            return redirect('/dashboard/penilaian');
+            return redirect('/dashboard/penilaian')->with('failed', 'User belum dinilai!');
         }
         return view('penilaian.rekap', $data);
     }
