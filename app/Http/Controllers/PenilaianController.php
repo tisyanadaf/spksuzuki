@@ -205,7 +205,8 @@ class PenilaianController extends Controller
     public function detail_nilai_karyawan()
     {
         // Panggil data karyawan dan nilai untuk disabled
-        return view('penilaian.detail');
+        $data['karyawan_hasil_penilaian'] = $this->penilaian_model->get_hasil_penilaian();
+        return view('penilaian.list_hasil', $data);
     }
 
     public function rekap($id)

@@ -30,6 +30,12 @@ class Penilaian extends Model
         return $result;
     }
 
+    public function get_hasil_penilaian()
+    {
+        $result = DB::select("select K.id as id_karyawan, K.nik, K.nama_lengkap, K.divisi, K.jabatan, K.tgl_masuk, N.nilai_akhir, N.kesimpulan from tbl_karyawan K JOIN tbl_nilai_hasil N ON K.id = N.id_karyawan WHERE K.role = 'karyawan'");
+        return $result;
+    }
+
     public function insert_nilai_hasil(Object $values)
     {
         $result = DB::insert("insert into $this->table_nilai_hasil 
