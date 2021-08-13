@@ -62,7 +62,7 @@
                         <div class="col-md-12">
                         <select name="divisi" value="{{auth()->user()->divisi}}" class="form-control custom-select">
                             <option value="" disabled>Pilih Divisi</option>
-                            <option value="penjualan" @if(auth()->user()->divisi === 'kepala cabang') selected @endif>Kepala Cabang</option>
+                            <option value="kepala cabang" @if(auth()->user()->divisi === 'kepala cabang') selected @endif>Kepala Cabang</option>
                             <option value="penjualan" @if(auth()->user()->divisi === 'penjualan') selected @endif>Penjualan</option>
                             <option value="service" @if(auth()->user()->divisi === 'service') selected @endif>Service</option>
                         </select>
