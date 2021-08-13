@@ -17,9 +17,9 @@ class CreateTblNilaiCfSf extends Migration
             $table->bigIncrements('id');
             $table->string('id_karyawan');
             $table->string('id_aspek');
-            $table->string('nilai_cf');
-            $table->string('nilai_sf');
-            $table->string('nilai_total');
+            $table->integer('nilai_cf');
+            $table->integer('nilai_sf');
+            $table->integer('nilai_total');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateTblNilaiHasil extends Migration
         Schema::create('tbl_nilai_hasil', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_karyawan');
-            $table->string('nilai_akhir');
+            $table->float('nilai_akhir');
             $table->string('notes');
             $table->string('kesimpulan');
             $table->timestamps();

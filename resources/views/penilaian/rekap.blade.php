@@ -82,12 +82,12 @@
                         <tr>
                             <td>Koordinasi atau Pendelegasian Tugas</td>
                             <td> : </td>
-                            <td> {{$nilai_per_kriteria[5]->nilai}} </td>
+                            <td> {{$nilai_per_kriteria[6]->nilai}} </td>
                         </tr>
                         <tr>
                             <td>Minat dalam Kerja</td>
                             <td> : </td>
-                            <td> {{$nilai_per_kriteria[6]->nilai}} </td>
+                            <td> {{$nilai_per_kriteria[5]->nilai}} </td>
                         </tr>
                         <tr>
                             <td><strong> C. Aspek Softskill </strong></td>

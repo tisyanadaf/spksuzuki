@@ -46,7 +46,7 @@
                     <div class="card-body">
                         <h5 class="text-black p-2">Nama Karyawan : {{$karyawan[0]->nama_lengkap}}</h5>
                         <hr>
-                        <form id="demo" action="{{ url('dashboard/input_nilai') }}" method="post">
+                        <form id="demo" action='{{ url("dashboard/review_nilai/$id_karyawan") }}' method="post">
                             <div>
                                 {{csrf_field()}}
                                 <input type="hidden" name="id_karyawan" value="{{$karyawan[0]->id}}" />
@@ -65,10 +65,10 @@
                                                             <label for="kualitas_kerja">Kualitas Kerja :</label>
                                                             <select id="kualitas_kerja" required name="kualitas_kerja" class="form-control custom-select">
                                                                 <option selected value="" disabled>Pilih Penilaian</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
+                                                                <option value="1" @if($nilai_per_kriteria[0]->nilai === 1) selected @endif>1</option>
+                                                                <option value="2" @if($nilai_per_kriteria[0]->nilai === 2) selected @endif>2</option>
+                                                                <option value="3" @if($nilai_per_kriteria[0]->nilai === 3) selected @endif>3</option>
+                                                                <option value="4" @if($nilai_per_kriteria[0]->nilai === 4) selected @endif>4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -77,10 +77,10 @@
                                                             <label for="kuantitas_kerja">Kuantitas Kerja :</label>
                                                             <select id="kuantitas_kerja" required name="kuantitas_kerja" class="form-control custom-select">
                                                                 <option selected value="" disabled>Pilih Penilaian</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
+                                                                <option value="1" @if($nilai_per_kriteria[1]->nilai === 1) selected @endif>1</option>
+                                                                <option value="2" @if($nilai_per_kriteria[1]->nilai === 2) selected @endif>2</option>
+                                                                <option value="3" @if($nilai_per_kriteria[1]->nilai === 3) selected @endif>3</option>
+                                                                <option value="4" @if($nilai_per_kriteria[1]->nilai === 4) selected @endif>4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -91,10 +91,10 @@
                                                             <label for="disiplin_kerja">Disiplin Kerja :</label>
                                                             <select id="disiplin_kerja" required name="disiplin_kerja" class="form-control custom-select">
                                                                 <option selected value="" disabled>Pilih Penilaian</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
+                                                                <option value="1" @if($nilai_per_kriteria[2]->nilai === 1) selected @endif>1</option>
+                                                                <option value="2" @if($nilai_per_kriteria[2]->nilai === 2) selected @endif>2</option>
+                                                                <option value="3" @if($nilai_per_kriteria[2]->nilai === 3) selected @endif>3</option>
+                                                                <option value="4" @if($nilai_per_kriteria[2]->nilai === 4) selected @endif>4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -103,10 +103,10 @@
                                                             <label for="kerja_sama">Kerja Sama :</label>
                                                             <select id="kerja_sama" required name="kerja_sama" class="form-control custom-select">
                                                                 <option selected value="" disabled>Pilih Penilaian</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
+                                                                <option value="1" @if($nilai_per_kriteria[3]->nilai === 1) selected @endif>1</option>
+                                                                <option value="2" @if($nilai_per_kriteria[3]->nilai === 2) selected @endif>2</option>
+                                                                <option value="3" @if($nilai_per_kriteria[3]->nilai === 3) selected @endif>3</option>
+                                                                <option value="4" @if($nilai_per_kriteria[3]->nilai === 4) selected @endif>4</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -120,10 +120,10 @@
                                                         <label for="pengetahuan">Pengetahuan dan Keterampilan Kerja :</label>
                                                         <select id="pengetahuan" required name="pengetahuan" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[4]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[4]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[4]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[4]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -132,10 +132,10 @@
                                                         <label for="koordinasi">Koordinasi atau Pendelegasian Tugas :</label>
                                                         <select id="koordinasi" required name="koordinasi" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[6]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[6]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[6]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[6]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -146,10 +146,10 @@
                                                         <label for="minat_kerja">Minat dalam Kerja :</label>
                                                         <select id="minat_kerja" required name="minat_kerja" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[5]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[5]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[5]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[5]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -162,10 +162,10 @@
                                                         <label for="keputusan_masalah">Teknik Mengatasi Masalah :</label>
                                                         <select id="keputusan_masalah" required name="keputusan_masalah" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[7]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[7]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[7]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[7]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -174,10 +174,10 @@
                                                         <label for="penyesuaian_diri">Penyesuaian Diri :</label>
                                                         <select id="penyesuaian_diri" required name="penyesuaian_diri" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[9]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[9]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[9]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[9]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -188,10 +188,10 @@
                                                         <label for="komunikasi">Kemampuan Berkomunikasi :</label>
                                                         <select id="komunikasi" required name="komunikasi" class="form-control custom-select">
                                                             <option selected value="" disabled>Pilih Penilaian</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
+                                                            <option value="1" @if($nilai_per_kriteria[8]->nilai === 1) selected @endif>1</option>
+                                                            <option value="2" @if($nilai_per_kriteria[8]->nilai === 2) selected @endif>2</option>
+                                                            <option value="3" @if($nilai_per_kriteria[8]->nilai === 3) selected @endif>3</option>
+                                                            <option value="4" @if($nilai_per_kriteria[8]->nilai === 4) selected @endif>4</option>
                                                         </select>
                                                     </div>
                                                 </div>

@@ -25,7 +25,7 @@ class PenilaianController extends Controller
         return view('penilaian.index', $data);
     }
 
-    public function store_insert(Request $request)
+    public function hitung_penilaian($request)
     {
         $date = new DateTime();
         $values =  new stdClass();
@@ -134,9 +134,7 @@ class PenilaianController extends Controller
         }
         $values->id_karyawan = $id_karyawan;
         $values->nilai_akhir = $nilai_akhir;
-        $values->notes = '';
         $values->kesimpulan = $kesimpulan;
-        $values->created_at = $date->format('Y-m-d H:i:s');
         $values->updated_at = $date->format('Y-m-d H:i:s');
         for ($ii = 1; $ii < 11; $ii++) {
             $values->nilai[$ii] = $nilai[$ii];
@@ -146,6 +144,17 @@ class PenilaianController extends Controller
             $values->nilai_sf[$jj] = $nilai[$jj];
             $values->nilai_total[$jj] = $nilai[$jj];
         }
+
+        return $values;
+    }
+
+    public function store_insert(Request $request)
+    {
+        $date = new DateTime();
+        $values = $this->hitung_penilaian($request);
+        $values->notes = '';
+        $values->created_at = $date->format('Y-m-d H:i:s');
+        $id_karyawan = $request->input('id_karyawan');
         $this->penilaian_model->insert_nilai_hasil($values);
         $this->penilaian_model->insert_nilai($values);
         $this->penilaian_model->insert_nilai_cf_sf($values);
@@ -156,15 +165,21 @@ class PenilaianController extends Controller
     public function store_update(Request $request, $id)
     {
         $nama_lengkap = $request->input('nama_lengkap');
-        $date = new DateTime();
-        $values =  new stdClass();
         if ($request->input('notes')) {
+            $date = new DateTime();
+            $values =  new stdClass();
             $values->notes = $request->input('notes');
             $values->kesimpulan = $request->input('kesimpulan');
             $values->updated_at = $date->format('Y-m-d H:i:s');
             $this->penilaian_model->update_kesimpulan_notes($values, $id);
             return redirect('/dashboard/penilaian')->with('success', "Anda sudah memberikan nilai untuk $nama_lengkap");
         }
+
+        $values = $this->hitung_penilaian($request);
+        $this->penilaian_model->update_nilai_hasil($values, $id);
+        $this->penilaian_model->update_nilai($values, $id);
+        $this->penilaian_model->update_nilai_cf_sf($values, $id);
+        return redirect("/dashboard/rekap_nilai/$id");
     }
 
     public function input($id)
@@ -177,11 +192,14 @@ class PenilaianController extends Controller
     public function review($id)
     {
         // Panggil data karyawan dan nilai untuk disabled
+        $data['id_karyawan'] = $id;
         $data['karyawan'] = $this->karyawan_model->get_data_by('id', $id);
         $data['nilai_hasil'] = $this->penilaian_model->get_nilai_hasil_by('id_karyawan', $id);
         $data['nilai_per_kriteria'] = $this->penilaian_model->get_nilai_kriteria_by('id_karyawan', $id);
-        dd($data);
-        return view('penilaian.form', $data);
+        if (empty($data['nilai_hasil'])) {
+            return redirect('/dashboard/penilaian')->with('failed', 'User belum dinilai!');
+        }
+        return view('penilaian.ubah', $data);
     }
 
     public function detail_nilai_karyawan()

@@ -15,9 +15,9 @@ class CreateTblNilai extends Migration
     {
         Schema::create('tbl_nilai', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_kriteria');
+            $table->integer('id_kriteria');
             $table->string('id_karyawan');
-            $table->string('nilai');
+            $table->integer('nilai');
             $table->timestamps();
         });
     }

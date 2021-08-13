@@ -20,7 +20,7 @@ class Penilaian extends Model
 
     public function get_nilai_kriteria_by($targetColumn, $value)
     {
-        $result = DB::select("select nilai from $this->table_nilai where $targetColumn = '$value'");
+        $result = DB::select("select nilai from $this->table_nilai where $targetColumn = '$value' order by id_kriteria asc");
         return $result;
     }
 
@@ -66,5 +66,32 @@ class Penilaian extends Model
     {
         $result = DB::update("update $this->table_nilai_hasil set notes = '$values->notes', kesimpulan = '$values->kesimpulan', updated_at = '$values->updated_at' where id_karyawan = '$id'");
         return $result;
+    }
+
+    public function update_nilai_hasil(Object $values, $id)
+    {
+        $result = DB::update("update $this->table_nilai_hasil set id_karyawan = '$values->id_karyawan', nilai_akhir = '$values->nilai_akhir', kesimpulan = '$values->kesimpulan', updated_at = '$values->updated_at' where id_karyawan = '$id'");
+        return $result;
+    }
+
+    public function update_nilai(Object $values, $id)
+    {
+        $nilai = $values->nilai;
+        for ($ii = 1; $ii < 11; $ii++) {
+            DB::update("update $this->table_nilai set id_kriteria = '$ii', id_karyawan = '$values->id_karyawan', nilai = '$nilai[$ii]', updated_at = '$values->updated_at' where id_karyawan = '$id'");
+        }
+        return "11 rows effected";
+    }
+
+    public function update_nilai_cf_sf(Object $values, $id)
+    {
+        $nilai_cf = $values->nilai_cf;
+        $nilai_sf = $values->nilai_sf;
+        $nilai_total = $values->nilai_total;
+        for ($ii = 1; $ii < 4; $ii++) {
+            DB::update("update $this->table_cf_sf set id_karyawan = '$values->id_karyawan', id_aspek = '$ii', nilai_cf = '$nilai_cf[$ii]', nilai_sf = '$nilai_sf[$ii]', 
+            nilai_total = '$nilai_total[$ii]', updated_at = '$values->updated_at' where id_karyawan = '$id'");
+        }
+        return "4 rows effected";
     }
 }

@@ -38,6 +38,7 @@ Route::middleware(['isLogged'])->group(function () {
     Route::get('/dashboard/input_nilai/{id}', 'PenilaianController@input');
     Route::post('/dashboard/input_nilai', 'PenilaianController@store_insert');
     Route::get('/dashboard/review_nilai/{id}', 'PenilaianController@review');
+    Route::post('/dashboard/review_nilai/{id}', 'PenilaianController@store_update');
     Route::get('/dashboard/hasil_nilai', 'PenilaianController@detail_nilai_karyawan');
     Route::get('/dashboard/rekap_nilai/{id}', 'PenilaianController@rekap');
     Route::post('/dashboard/rekap_nilai/{id}', 'PenilaianController@store_update');
