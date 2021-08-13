@@ -39,8 +39,8 @@
                                     <div class="col-md-3">
                                         <select name="divisi" value="{{$karyawan[0]->divisi}}" class="form-control custom-select">
                                             <option value="" disabled>Pilih Divisi</option>
-                                            <option value="penjualan" @if($karyawan[0]->divisi === 'penjualan') selected @endif>Penjualan</option>
-                                            <option value="service" @if($karyawan[0]->divisi === 'service') selected @endif>Service</option>
+                                            <option value="kepala cabang" @if($karyawan[0]->divisi === 'kepala cabang') selected @endif>Kepala Cabang</option>
+                                            <option value="manager divisi" @if($karyawan[0]->divisi === 'manager divisi') selected @endif>Manager Divisi</option>
                                         </select>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                 <div class="form-group row">
                                     <label class="control-label text-right col-md-3">Password</label>
                                     <div class="col-md-3">
-                                        <input name="password" value="{{$karyawan[0]->password}}" class="form-control" placeholder="password" type="text">
+                                        <input name="password" value="" class="form-control" placeholder="password" type="text">
                                     </div>
                                 </div>
                             </div>

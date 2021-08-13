@@ -19,7 +19,7 @@ class KaryawanSeeder extends Seeder
                 'nama_lengkap' => 'Tangguh Destio Pramono',
                 'jenis_kelamin' => 'PRIA',
                 'tgl_masuk' => '2021-05-01',
-                'divisi' => 'penjualan',
+                'divisi' => 'kepala cabang',
                 'jabatan' => 'Kepala Cabang',
                 'username' => 'tangguh',
                 'password' => '$2y$10$r3uZ8j/QdkpkrAylOyIOVupQ1ywm4UxiO6iNFe03WRLMKosaJTkFS',

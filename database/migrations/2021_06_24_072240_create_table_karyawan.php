@@ -19,7 +19,7 @@ class CreateTableKaryawan extends Migration
             $table->string('nama_lengkap');
             $table->string('jenis_kelamin');
             $table->date('tgl_masuk');
-            $table->enum('divisi', ['kepala cabang','penjualan', 'service']);
+            $table->enum('divisi', ['kepala cabang', 'manager divisi', 'penjualan', 'service']);
             $table->string('jabatan');
             $table->string('username')->nullable(true);
             $table->string('password')->nullable(true);

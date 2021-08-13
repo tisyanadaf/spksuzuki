@@ -10,8 +10,10 @@
             </li>
             <li id="input-penilaian" class=""> <a href="{{ url('dashboard/penilaian') }}"> <i class="fa fa-pencil-square-o"></i> <span>Input Penilaian</span> <span class="pull-right-container"> </span></a>
             </li>
+            @if (auth()->user()->divisi === "kepala cabang")
             <li id="hasil-penilaian" class=""> <a href="{{ url('dashboard/hasil_nilai') }}"> <i class="fa fa-file-text"></i> <span>Hasil Penilaian</span> <span class="pull-right-container"> </span></a>
             </li>
+            @endif
         </ul>
     </div>
     <!-- /.sidebar -->

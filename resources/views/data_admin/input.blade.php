@@ -39,8 +39,8 @@
                                     <div class="col-md-3">
                                         <select name="divisi" class="form-control custom-select">
                                             <option selected value="" disabled>Pilih Divisi</option>
-                                            <option value="penjualan">Penjualan</option>
-                                            <option value="service">Service</option>
+                                            <option value="kepala cabang">Kepala Cabang</option>
+                                            <option value="manager divisi">Manager Divisi</option>
                                         </select>
                                     </div>
                                 </div>

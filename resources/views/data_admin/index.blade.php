@@ -31,7 +31,7 @@
                     <a href="{{ url('dashboard/input_admin') }}" type="button" class="btn btn-primary float-right m-2">Tambah Data Admin</a>
                         <div class="info-box m-t-1">
                             <div class="table-responsive">
-                                <table id="tbl_hasil" class="table table-bordered table-striped">
+                                <table id="tbl_all_admin" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>NIK</th>

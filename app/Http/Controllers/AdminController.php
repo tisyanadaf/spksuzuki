@@ -73,7 +73,7 @@ class AdminController extends Controller
 
         if ($form === 'edit') {
             $data['id'] = $id;
-            $data['karyawan'] = $this->admin_model->get_data_by('id', $id);
+            $data['karyawan'] = $this->admin_model->get_data_by('id', $id, 'admin');
             return view('data_admin.ubah', $data);
         } else {
             return view('data_admin.input');
@@ -82,7 +82,7 @@ class AdminController extends Controller
 
     public function delete($id)
     {
-        $admin = $this->admin_model->get_data_by('id', $id);
+        $admin = $this->admin_model->get_data_by('id', $id, 'admin');
         $nama = strval($admin[0]->nama_lengkap);
 
         if (count($admin) !== 0) {
