@@ -35,6 +35,15 @@ class Karyawan extends Model
         return $result;
     }
 
+    public function get_by_divisi($kelamin, $targetColumn, $value1, $value2, $role = 'karyawan')
+    {
+        if ($role === 'karyawan') {
+            $result = DB::select("select count(*) as jumlah from $this->table_karyawan where $targetColumn = '$value2' and role='$role' and $kelamin = '$value1'");
+        } else {
+            $result = DB::select("select count(*) as jumlah from $this->table_karyawan where $targetColumn = '$value2' and role='$role' and $kelamin = '$value1'");
+        }
+        return $result;
+    }
     public function get_data_by($targetColumn, $value, $role = 'karyawan')
     {
         if ($role === 'karyawan') {

@@ -7,7 +7,7 @@
 			labels: ['Wanita', 'Pria'],
 			datasets: [{
 				'label': 'Karyawan Divisi Penjualan',
-				data: [300, 50],
+				data: [{{$penjualan_wanita[0]->jumlah}}, {{$penjualan_pria[0]->jumlah}}],
 				backgroundColor: ['rgb(255, 99, 132)',
 					'rgb(54, 162, 235)'
 				],
@@ -24,7 +24,7 @@
 			labels: ['Wanita', 'Pria'],
 			datasets: [{
 				'label': 'Karyawan Divisi Service',
-				data: [300, 50],
+				data: [{{$service_wanita[0]->jumlah}}, {{$service_pria[0]->jumlah}}],
 				backgroundColor: ['rgb(255, 99, 132)',
 					'rgb(54, 162, 235)'
 				],
