@@ -21,8 +21,9 @@ class DashboardController extends Controller
         $data['penjualan_wanita'] = $this->karyawan_model->get_by_divisi('jenis_kelamin', 'divisi', 'wanita', 'penjualan', 'karyawan');
         $data['service_wanita'] = $this->karyawan_model->get_by_divisi('jenis_kelamin', 'divisi', 'wanita', 'service', 'karyawan');
         $data['service_pria'] = $this->karyawan_model->get_by_divisi('jenis_kelamin', 'divisi', 'pria', 'service', 'karyawan');
-        //dd($data['penjualan_pria'][0]->jumlah);
+        $data['jumlah_nilai'] = $this->karyawan_model->get_karyawan_dinilai();
 
         return view('dashboard.index', $data);
     }
+
 }

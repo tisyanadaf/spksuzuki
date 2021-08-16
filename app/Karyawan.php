@@ -44,6 +44,7 @@ class Karyawan extends Model
         }
         return $result;
     }
+
     public function get_data_by($targetColumn, $value, $role = 'karyawan')
     {
         if ($role === 'karyawan') {
@@ -51,6 +52,14 @@ class Karyawan extends Model
         } else {
             $result = DB::select("select * from $this->table_karyawan where $targetColumn = '$value' and role='$role'");
         }
+        return $result;
+    }
+
+    public function get_karyawan_dinilai()
+    {
+        $result['jumlah_sudah_dinilai'] = DB::select("select count(*) AS jumlah from $this->table_nilai_hasil")[0]->jumlah;
+        $total_karyawan = DB::select("select count(*) AS jumlah from $this->table_karyawan")[0];
+        $result['jumlah_belum_dinilai'] = $total_karyawan->jumlah - $result['jumlah_sudah_dinilai'];
         return $result;
     }
 

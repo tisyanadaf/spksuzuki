@@ -46,7 +46,7 @@
                 <div class="info-box bg-green text-white"> <span class="info-box-icon bg-transparent"><i class="ti-stats-up text-white"></i></span>
                     <div class="info-box-content">
                         <h6 class="info-box-text text-white">Karyawan Sudah Dinilai</h6>
-                        <h1 class="text-white">1,150</h1>
+                        <h1 class="text-white">{{$jumlah_nilai['jumlah_sudah_dinilai']}}</h1>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -57,7 +57,7 @@
                 <div class="info-box bg-darkblue"> <span class="info-box-icon bg-transparent"><i class="ti-face-smile"></i></span>
                     <div class="info-box-content">
                         <h6 class="info-box-text text-white">Karyawan Belum Dinilai</h6>
-                        <h1 class="text-white">565</h1>
+                        <h1 class="text-white">{{$jumlah_nilai['jumlah_belum_dinilai']}}</h1>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
