@@ -139,6 +139,13 @@
                     <br>
                     <table>
                         <tr>
+                            <td>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <a href='{{ url("dashboard/hapus_penilaian/$id_karyawan") }}' class="btn btn-danger">Hapus</a>
+                                    </div>
+                                </div>
+                            </td>
                             <td align="right">
                                 <div class="form-group">
                                     <div class="col-sm-12">

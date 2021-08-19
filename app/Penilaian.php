@@ -10,12 +10,14 @@ class Penilaian extends Model
     private $table_nilai;
     private $table_nilai_hasil;
     private $table_cf_sf;
+    private $table_karyawan;
 
     public function __construct()
     {
         $this->table_nilai = 'tbl_nilai';
         $this->table_nilai_hasil = 'tbl_nilai_hasil';
         $this->table_cf_sf = 'tbl_nilai_cf_sf';
+        $this->table_karyawan = 'tbl_karyawan';
     }
 
     public function get_nilai_kriteria_by($targetColumn, $value)
@@ -99,5 +101,15 @@ class Penilaian extends Model
             nilai_total = '$nilai_total[$ii]', updated_at = '$values->updated_at' where id_karyawan = '$id'");
         }
         return "4 rows effected";
+    }
+
+    public function delete_data($id)
+    {
+        $result = DB::delete("DELETE $this->table_nilai_hasil, $this->table_nilai 
+        FROM $this->table_nilai_hasil INNER JOIN $this->table_nilai 
+        ON $this->table_nilai_hasil.id_karyawan = $this->table_nilai.id_karyawan 
+        WHERE $this->table_nilai_hasil.id_karyawan = $id");
+        //dd($result);
+        return $result;
     }
 }

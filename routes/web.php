@@ -42,6 +42,7 @@ Route::middleware(['isLogged'])->group(function () {
     Route::get('/dashboard/hasil_nilai', 'PenilaianController@detail_nilai_karyawan');
     Route::get('/dashboard/rekap_nilai/{id}', 'PenilaianController@rekap');
     Route::post('/dashboard/rekap_nilai/{id}', 'PenilaianController@store_update');
+    Route::get('/dashboard/hapus_penilaian/{id}', 'PenilaianController@delete');
 
     //Profile
     Route::get('/dashboard/profile', 'AdminController@profile');

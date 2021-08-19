@@ -221,4 +221,16 @@ class PenilaianController extends Controller
         }
         return view('penilaian.rekap', $data);
     }
+
+    public function delete($id)
+    {
+        $penilaian = $this->penilaian_model->get_nilai_hasil_by('id_karyawan', $id);
+        //dd($penilaian);
+        if (count($penilaian) !== 0) {
+            $this->penilaian_model->delete_data($id);
+            return redirect('dashboard/penilaian')->with('success', "Data berhasil dihapus");
+        }
+
+        return redirect('dashboard/review_nilai/$id_karyawan')->with('failed', 'Data gagal dihapus');
+    }
 }
